@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Engineering Sample Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App is to be designed to store all engineering samples with all relevant details in one format.
+It will allow users a snapshot of where the projects are up to and also allow detailed information for each individual job.
 
 ## Available Scripts
 

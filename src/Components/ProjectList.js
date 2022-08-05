@@ -13,21 +13,25 @@ function ProjectList() {
       <div className="project-list">
         <table>
           <thead>
-            <th>Id</th>
-            <th>P/N</th>
-            <th>Tool</th>
-            <th>Stage</th>
-            <th>Engineer</th>
+            <tr>
+              <th>Id</th>
+              <th>P/N</th>
+              <th>Tool</th>
+              <th>Stage</th>
+              <th>Engineer</th>
+            </tr>
           </thead>
           {ProjectsData.map((project) => {
             return (
-              <tr>
-                <th> {project.id}</th>
-                <th>{project.Part} </th>
-                <th>{project.Tool}</th>
-                <th>{project.Stage}</th>
-                <th>{project.Engineer}</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <td> {project.id}</td>
+                  <td>{project.Part} </td>
+                  <td>{project.Tool}</td>
+                  <td>{project.Stage}</td>
+                  <td>{project.Engineer}</td>
+                </tr>
+              </tbody>
             );
           })}
         </table>

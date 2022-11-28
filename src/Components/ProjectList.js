@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from "react";
+import { Link } from "react-router-dom";
 import ProjectsData from "../Data/ProjectsData";
 import "../Styles/ProjectList.css";
 import "../Styles/NameTitle.css";
@@ -25,11 +26,13 @@ function ProjectList() {
             return (
               <tbody>
                 <tr>
-                  <td> {project.id}</td>
-                  <td>{project.Part} </td>
-                  <td>{project.Tool}</td>
-                  <td>{project.Stage}</td>
-                  <td>{project.Engineer}</td>
+                  <Link to={`/productcard/${project.id}`}>
+                    <td> {project.id}</td>
+                    <td> {project.Part} </td>
+                    <td>{project.Tool}</td>
+                    <td>{project.Stage}</td>
+                    <td>{project.Engineer}</td>
+                  </Link>
                 </tr>
               </tbody>
             );

@@ -1,45 +1,17 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prop-types */
 import React from "react";
-import { Link } from "react-router-dom";
-import ProjectsData from "../Data/ProjectsData";
-import "../Styles/ProjectList.css";
-import "../Styles/NameTitle.css";
 
-function ProjectList() {
+function ProjectList({ projects, title }) {
   return (
-    <>
-      <div className="welcome-title">
-        <h1>Welcome Nathan</h1>
-      </div>
-      <div className="project-list">
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>P/N</th>
-              <th>Tool</th>
-              <th>Stage</th>
-              <th>Engineer</th>
-            </tr>
-          </thead>
-          {ProjectsData.map((project) => {
-            return (
-              <tbody>
-                <tr>
-                  <Link to={`/productcard/${project.id}`}>
-                    <td> {project.id}</td>
-                    <td> {project.Part} </td>
-                    <td>{project.Tool}</td>
-                    <td>{project.Stage}</td>
-                    <td>{project.Engineer}</td>
-                  </Link>
-                </tr>
-              </tbody>
-            );
-          })}
-        </table>
-      </div>
-    </>
+    <div className="project-list">
+      <h2>{title}</h2>
+      {projects.map((project) => (
+        <div className="project-preview" key={project.id}>
+          <h2>{project.title}</h2>
+          <p>Part Number{project.Part}</p>
+        </div>
+      ))}
+    </div>
   );
 }
 

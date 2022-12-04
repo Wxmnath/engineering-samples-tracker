@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProjectList from "./ProjectList";
+import useFetch from "./useFetch";
 
 function Home() {
-  const [projects, setProjects] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/ProjectsData")
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("data not fetched??");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setProjects(data);
-        setIsPending(false);
-        setError(null);
-      })
-      .catch((err) => {
-        setIsPending(false);
-        setError(err.message);
-      });
-  }, []); // square brackets to only render useEffect on the first render and not keep rendering after.
-
+  const {
+    data: projects,
+    isPending,
+    error,
+  } = useFetch("http://localhost:8000/ProjectsData");
   return (
     <div className="home">
       {error && <div>{error}</div>}

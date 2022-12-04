@@ -10,7 +10,7 @@ function ProjectList({ projects, title }) {
         <div className="project-preview" key={project.id}>
           <Link to={`/projects/${project.id}`}>
             <h2>{project.title}</h2>
-            <p>Part Number{project.Part}</p>
+            <p>Part Number {project.Part}</p>
           </Link>
         </div>
       ))}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Create from "./Create";
+import ProjectDetails from "./ProjectDetails";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
           </Routes>
         </div>
       </div>

@@ -7,12 +7,14 @@ function Create() {
   const [Tool, setTool] = useState("");
   const [Stage, setStage] = useState("Contract Review");
   const [Engineer, setEngineer] = useState("");
+  const [Customer, setCustomer] = useState("");
+  const [Description, setDescription] = useState("");
   const [isPending, setIsPending] = useState(false);
   const history = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const project = { Part, Tool, Stage, Engineer };
+    const project = { Customer, Part, Description, Tool, Stage, Engineer };
 
     setIsPending(true);
 
@@ -30,6 +32,14 @@ function Create() {
     <div className="create">
       <h2>Add a New Job</h2>
       <form onSubmit={handleSubmit}>
+        <label>Customer:</label>
+        <input
+          type="text"
+          name="customer"
+          required
+          value={Customer}
+          onChange={(e) => setCustomer(e.target.value)}
+        />
         <label>Part No.:</label>
         <input
           type="text"
@@ -38,7 +48,14 @@ function Create() {
           value={Part}
           onChange={(e) => setPart(e.target.value)}
         />
-
+        <label>Description:</label>
+        <input
+          type="text"
+          name="description"
+          required
+          value={Description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
         <label>Tool No.: </label>
         <input
           type="number"

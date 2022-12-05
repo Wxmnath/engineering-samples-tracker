@@ -9,8 +9,8 @@ function ProjectList({ projects, title }) {
       {projects.map((project) => (
         <div className="project-preview" key={project.id}>
           <Link to={`/projects/${project.id}`}>
-            <h2>{project.title}</h2>
-            <p>Part Number {project.Part}</p>
+            <h2>P/N {project.Part}</h2>
+            <p>Tool {project.Tool}</p>
           </Link>
         </div>
       ))}

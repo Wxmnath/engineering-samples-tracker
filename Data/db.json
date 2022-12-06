@@ -22,15 +22,6 @@
       "Stage": "In Production",
       "Engineer": "Nathan Humphreys",
       "id": 6
-    },
-    {
-      "Customer": "Collins",
-      "Part": "IC75940",
-      "Description": "Post",
-      "Tool": "5041",
-      "Stage": "Contract Review",
-      "Engineer": "Paul Bedford",
-      "id": 7
     }
   ]
 }

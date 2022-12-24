@@ -1,27 +1,35 @@
 {
   "ProjectsData": [
     {
-      "Part": "CH2465M0002",
-      "Tool": "4991",
-      "Stage": "In Production",
-      "Engineer": "Nathan Humphreys",
-      "id": 4
-    },
-    {
-      "Part": "3985-58033",
+      "Customer": "Leonardo",
+      "Part": "39855-57033",
+      "Description": "box",
       "Tool": "4797",
       "Stage": "In Production",
       "Engineer": "Nathan Humphreys",
-      "id": 5
+      "id": 1,
+      "WaxProcedure": "Complete",
+      "FoundryProcedure": "Not Complete"
+    },
+    {
+      "Customer": "Collins",
+      "Part": "IC75940",
+      "Description": "RAT",
+      "Tool": "5045",
+      "Stage": "Contract Review",
+      "Engineer": "J Castell",
+      "id": 2,
+      "WaxProcedure": "Complete"
     },
     {
       "Customer": "Leonardo",
-      "Part": "3985-57033",
-      "Description": "Processor",
-      "Tool": "4797",
-      "Stage": "In Production",
-      "Engineer": "Nathan Humphreys",
-      "id": 6
+      "Part": "CH2465M0002",
+      "Description": "test",
+      "Tool": "1111",
+      "Stage": "Contract Review",
+      "Engineer": "Buddy",
+      "WaxProcedure": "Complete",
+      "id": 3
     }
   ]
 }

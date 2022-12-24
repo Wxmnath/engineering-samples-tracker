@@ -8,20 +8,32 @@ function Create() {
   const [Stage, setStage] = useState("Contract Review");
   const [Engineer, setEngineer] = useState("");
   const [Customer, setCustomer] = useState("");
+  const [WaxProcedure, setWaxProcedure] = useState("");
+
   const [Description, setDescription] = useState("");
   const [isPending, setIsPending] = useState(false);
   const history = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const project = { Customer, Part, Description, Tool, Stage, Engineer };
+    e.preventDefault(); // prevents the form from refreshing in the browser
+    const project = {
+      Customer,
+      Part,
+      Description,
+      Tool,
+      Stage,
+      Engineer,
+      WaxProcedure,
+    };
 
     setIsPending(true);
 
     fetch("http://localhost:8000/ProjectsData", {
+      // This is asynchronous and returns a promise.
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(project),
+      body: JSON.stringify(project), // body is the actual data we send with this request. This data is project.
+      // JSON.stringify turns the object of project in to a string
     }).then(() => {
       setIsPending(false);
       history("/");
@@ -82,11 +94,22 @@ function Create() {
           onChange={(e) => setEngineer(e.target.value)}
         />
 
+        <label>Wax Procedure: </label>
+        <select
+          value={WaxProcedure}
+          onChange={(e) => setWaxProcedure(e.target.value)}
+        >
+          <option value="Not Complete">Not Complete</option>
+          <option value="Complete">Complete</option>
+        </select>
+
         {!isPending && <button type="submit">Add Job</button>}
         {isPending && (
           <button type="submit" disabled>
             Adding blog...
           </button>
+          // if isPending is false will show button to be showing Add Job
+          // if isPending is true after it has been clicked will trurn to Adding blog... - disabled added to not allow user to click again.
         )}
       </form>
     </div>

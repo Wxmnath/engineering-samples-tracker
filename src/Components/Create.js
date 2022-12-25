@@ -9,6 +9,7 @@ function Create() {
   const [Engineer, setEngineer] = useState("");
   const [Customer, setCustomer] = useState("");
   const [WaxProcedure, setWaxProcedure] = useState("");
+  const [FoundryProcedure, setFoundryProcedure] = useState("");
 
   const [Description, setDescription] = useState("");
   const [isPending, setIsPending] = useState(false);
@@ -79,10 +80,11 @@ function Create() {
 
         <label>Project Status:</label>
         <select value={Stage} onChange={(e) => setStage(e.target.value)}>
+          <option value="Contract Review">Contract Review</option>
           <option value="Tooling">Tooling</option>
           <option value="NPM">NPM</option>
-          <option value="In Production">In Production</option>
-          <option value="Contract Review">Contract Review</option>
+          <option value="Samples In WIP">Samples In WIP</option>
+          <option value="FAIR Stage">FAIR Stage</option>
         </select>
 
         <label>Lead Engineer: </label>
@@ -98,6 +100,14 @@ function Create() {
         <select
           value={WaxProcedure}
           onChange={(e) => setWaxProcedure(e.target.value)}
+        >
+          <option value="Not Complete">Not Complete</option>
+          <option value="Complete">Complete</option>
+        </select>
+        <label>Foundry Procedure: </label>
+        <select
+          value={FoundryProcedure}
+          onChange={(e) => setFoundryProcedure(e.target.value)}
         >
           <option value="Not Complete">Not Complete</option>
           <option value="Complete">Complete</option>

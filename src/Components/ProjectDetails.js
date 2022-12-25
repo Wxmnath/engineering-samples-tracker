@@ -7,6 +7,10 @@ import useFetch from "./useFetch";
 
 function ProjectDetails() {
   const [waxProcedure, setWaxProcedure] = useState("");
+  const [foundryProcedure, setFoundryProcedure] = useState("");
+  const [cutOffProcedure, setCutOffProcedure] = useState("");
+  const [commentsAdded, setCommentsAdded] = useState("");
+
   const { id } = useParams();
   const {
     data: project, // data is now called project
@@ -15,36 +19,21 @@ function ProjectDetails() {
   } = useFetch(`http://localhost:8000/ProjectsData/${id}`); // Reusing custom hook from useFetch component
   const history = useNavigate();
 
-  const handleClickDelete = () => {
-    fetch(`http://localhost:8000/ProjectsData/${id}`, {
-      method: "DELETE",
-    }).then(() => {
+  const handleClickDelete = async () => {
+    await axios.delete(`http://localhost:8000/ProjectsData/${id}`).then(() => {
       history("/");
     });
   };
 
-  const handleUpdate = async (e) => {
-    e.preventDefault();
+  const handleUpdate = async () => {
+    // e.preventDefault();
 
-    const res = await axios.patch(`http://localhost:8000/ProjectsData/${id}`, {
+    await axios.patch(`http://localhost:8000/ProjectsData/${id}`, {
       WaxProcedure: waxProcedure,
+      FoundryProcedure: foundryProcedure,
+      CutOffProcedure: cutOffProcedure,
+      comments: commentsAdded,
     });
-    console.log(res);
-
-    //   project.WaxProcedure = WaxProcedure;
-    //   console.log(project);
-    //   fetch(`http://localhost:8000/ProjectsData/${id}`, {
-    //     method: "PATCH",
-    //     headers: {
-    //       "Content-type": "application/json",
-    //       body: JSON.stringify({ WaxProcedure: "Not Complete" }),
-    //     },
-    //   })
-    //     .then((response) => {
-    //       console.log(response);
-    //       return response.json();
-    //     })
-    //     .then((data) => console.log(data));
   };
 
   return (
@@ -58,12 +47,11 @@ function ProjectDetails() {
             {project.Part} {project.Description}
           </h2>
           <h2>{project.Tool}</h2>
-          <div>Project Status: {project.Stage}</div>
-          <p>Lead engineer: {project.Engineer}</p>
-
+          <h3>Project Status: {project.Stage}</h3>
+          <h3>Lead engineer: {project.Engineer}</h3>
           <div className="procedure-list">
             <form>
-              Wax: <p>{project.WaxProcedure}</p>
+              <h3>Wax Procedures: {project.WaxProcedure}</h3>
               <input
                 type="radio"
                 name="waxprocedure"
@@ -80,13 +68,58 @@ function ProjectDetails() {
                 onChange={(e) => setWaxProcedure(e.currentTarget.value)}
               />
               Complete
+              <div>
+                <h3>Foundry Procedure: {project.FoundryProcedure}</h3>
+                <input
+                  type="radio"
+                  name="foundryprocedure"
+                  value="Not Complete"
+                  required
+                  onChange={(e) => setFoundryProcedure(e.currentTarget.value)}
+                />
+                Not Complete
+                <input
+                  type="radio"
+                  name="foundryprocedure"
+                  value="Complete"
+                  required
+                  onChange={(e) => setFoundryProcedure(e.currentTarget.value)}
+                />
+                Complete
+              </div>
+              <div>
+                <h3>Cut Off Procedure: {project.CutOffProcedure}</h3>
+                <input
+                  type="radio"
+                  name="cutoffprocedure"
+                  value="Not Complete"
+                  required
+                  onChange={(e) => setCutOffProcedure(e.currentTarget.value)}
+                />
+                Not Complete
+                <input
+                  type="radio"
+                  name="cutoffprocedure"
+                  value="Complete"
+                  required
+                  onChange={(e) => setCutOffProcedure(e.currentTarget.value)}
+                />
+                Complete
+              </div>
+              <h3>Last Comments:</h3> {project.comments}
+              <input
+                type="text"
+                name="name"
+                value={commentsAdded}
+                onChange={(e) => setCommentsAdded(e.currentTarget.value)}
+              />
               <button type="submit" onClick={handleUpdate}>
                 Update
               </button>
             </form>
           </div>
           <button type="submit" onClick={handleClickDelete}>
-            Delete
+            Remove Project
           </button>
         </article>
       )}

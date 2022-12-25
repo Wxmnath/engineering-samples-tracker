@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 /* eslint-disable no-shadow */
 import { useEffect, useState } from "react";
 
@@ -22,7 +23,6 @@ const useFetch = (url) => {
       })
       .catch((err) => {
         if (err.name === "AbortError") {
-          console.log("fetch aborted");
         } else {
           setIsPending(false);
           setError(err.message);

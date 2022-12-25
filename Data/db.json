@@ -1,17 +1,6 @@
 {
   "ProjectsData": [
     {
-      "Customer": "Leonardo",
-      "Part": "39855-57033",
-      "Description": "box",
-      "Tool": "4797",
-      "Stage": "In Production",
-      "Engineer": "Nathan Humphreys",
-      "id": 1,
-      "WaxProcedure": "Complete",
-      "FoundryProcedure": "Not Complete"
-    },
-    {
       "Customer": "Collins",
       "Part": "IC75940",
       "Description": "RAT",
@@ -19,17 +8,55 @@
       "Stage": "Contract Review",
       "Engineer": "J Castell",
       "id": 2,
-      "WaxProcedure": "Complete"
+      "WaxProcedure": "Complete",
+      "FoundryProcedure": "Complete",
+      "CutOffProcedure": "Complete",
+      "comments": "Nathan Humphreys"
     },
     {
-      "Customer": "Leonardo",
-      "Part": "CH2465M0002",
-      "Description": "test",
+      "Customer": "Collins",
+      "Part": "IC75940",
+      "Description": "RAT",
       "Tool": "1111",
       "Stage": "Contract Review",
-      "Engineer": "Buddy",
+      "Engineer": "J Castell",
       "WaxProcedure": "Complete",
+      "FoundryProcedure": "Complete",
+      "CutOffProcedure": "Complete",
+      "comments": "",
       "id": 3
+    },
+    {
+      "Customer": "Collins",
+      "Part": "00851-0671",
+      "Description": "Struts",
+      "Tool": "5026",
+      "Stage": "Samples In WIP",
+      "Engineer": "P. Bedford",
+      "WaxProcedure": "Complete",
+      "id": 4
+    },
+    {
+      "Customer": "Collins",
+      "Part": "00851-0672",
+      "Description": "Struts",
+      "Tool": "5027",
+      "Stage": "Samples In WIP",
+      "Engineer": "P. Bedford",
+      "WaxProcedure": "Complete",
+      "id": 5
+    },
+    {
+      "Customer": "MBDA",
+      "Part": "1221000186862",
+      "Description": "Centre Section",
+      "Tool": "4862",
+      "Stage": "Samples In WIP",
+      "Engineer": "Nathan Humphreys",
+      "WaxProcedure": "Complete",
+      "id": 6,
+      "FoundryProcedure": "Not Complete",
+      "CutOffProcedure": "Complete"
     }
   ]
 }

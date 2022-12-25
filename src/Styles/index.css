@@ -68,6 +68,17 @@
 .project-details div {
   margin: 20px 0;
 }
+
+.procedure-list {
+  display: grid;
+}
+
+.project-list h1 {
+  font-size: 30px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+
 .project-details button {
   background: #f1356d;
   color: #fff;

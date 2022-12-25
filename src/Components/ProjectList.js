@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 function ProjectList({ projects, title }) {
   return (
     <div className="project-list">
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       {projects.map((project) => (
         <div className="project-preview" key={project.id}>
           <Link to={`/projects/${project.id}`}>
             <h2>P/N {project.Part}</h2>
             <p>Tool {project.Tool}</p>
+            <p>{project.Stage}</p>
           </Link>
         </div>
       ))}

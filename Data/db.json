@@ -8,10 +8,10 @@
       "Stage": "Contract Review",
       "Engineer": "J Castell",
       "id": 2,
-      "WaxProcedure": "Complete",
-      "FoundryProcedure": "Complete",
-      "CutOffProcedure": "Complete",
-      "comments": "Nathan Humphreys"
+      "WaxProcedure": "Not Complete",
+      "FoundryProcedure": "Not Complete",
+      "CutOffProcedure": "Not Complete",
+      "comments": "Tooling on order 12.12.22"
     },
     {
       "Customer": "Collins",
@@ -34,7 +34,10 @@
       "Stage": "Samples In WIP",
       "Engineer": "P. Bedford",
       "WaxProcedure": "Complete",
-      "id": 4
+      "id": 4,
+      "FoundryProcedure": "Complete",
+      "CutOffProcedure": "Complete",
+      "comments": "First off samples waiting heat treat stage 12.12.22"
     },
     {
       "Customer": "Collins",
@@ -55,8 +58,9 @@
       "Engineer": "Nathan Humphreys",
       "WaxProcedure": "Complete",
       "id": 6,
-      "FoundryProcedure": "Not Complete",
-      "CutOffProcedure": "Complete"
+      "FoundryProcedure": "Complete",
+      "CutOffProcedure": "Not Complete",
+      "comments": "Wax assembly procedure complete and dont expect future changes to be needed.\nfoundry procedure technique is complete and dont expect for changes to be made.\nCut off procedure will need finalising to ensure it meets current technique.\n"
     }
   ]
 }

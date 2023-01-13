@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ProjectList({ projects, title }) {
+  // projects and title are props being called in Home component
   return (
     <div className="project-list">
       <h1>{title}</h1>

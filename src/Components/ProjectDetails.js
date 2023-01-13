@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -10,6 +10,17 @@ function ProjectDetails() {
   const [foundryProcedure, setFoundryProcedure] = useState("");
   const [cutOffProcedure, setCutOffProcedure] = useState("");
   const [commentsAdded, setCommentsAdded] = useState("");
+  // eslint-disable-next-line no-unused-vars
+  let savedText = "";
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    savedText = commentsAdded;
+  }, [commentsAdded]);
+
+  const handleChange = (e) => {
+    setCommentsAdded(e.target.value);
+  };
 
   const { id } = useParams();
   const {
@@ -106,12 +117,14 @@ function ProjectDetails() {
                 />
                 Complete
               </div>
-              <h3>Last Comments:</h3> {project.comments}
-              <input
+              <h3>Last Comments:</h3>
+              <textarea
+                className="text-box"
                 type="text"
-                name="name"
-                value={commentsAdded}
-                onChange={(e) => setCommentsAdded(e.currentTarget.value)}
+                name="comments"
+                defaultValue={(commentsAdded, project.comments)}
+                // test 3
+                onChange={handleChange}
               />
               <button type="submit" onClick={handleUpdate}>
                 Update

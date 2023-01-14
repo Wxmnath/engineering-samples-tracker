@@ -10,6 +10,7 @@ function ProjectDetails() {
   const [foundryProcedure, setFoundryProcedure] = useState("");
   const [cutOffProcedure, setCutOffProcedure] = useState("");
   const [commentsAdded, setCommentsAdded] = useState("");
+  const [stage, setStage] = useState("");
   // eslint-disable-next-line no-unused-vars
   let savedText = "";
 
@@ -44,6 +45,7 @@ function ProjectDetails() {
       FoundryProcedure: foundryProcedure,
       CutOffProcedure: cutOffProcedure,
       comments: commentsAdded,
+      Stage: stage,
     });
   };
 
@@ -59,7 +61,18 @@ function ProjectDetails() {
           </h2>
           <h2>{project.Tool}</h2>
           <h3>Project Status: {project.Stage}</h3>
+          <select
+            defaultValue={stage}
+            onChange={(e) => setStage(e.target.value)}
+          >
+            <option value="Contract Review">Contract Review</option>
+            <option value="Tooling">Tooling</option>
+            <option value="NPM">NPM</option>
+            <option value="Samples In WIP">Samples In WIP</option>
+            <option value="FAIR Stage">FAIR Stage</option>
+          </select>
           <h3>Lead engineer: {project.Engineer}</h3>
+
           <div className="procedure-list">
             <form>
               <h3>Wax Procedures: {project.WaxProcedure}</h3>

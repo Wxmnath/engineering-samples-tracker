@@ -59,8 +59,8 @@
       "WaxProcedure": "Complete",
       "id": 6,
       "FoundryProcedure": "Complete",
-      "CutOffProcedure": "Not Complete",
-      "comments": "Wax assembly procedure complete and dont expect future changes to be needed.\nfoundry procedure technique is complete and dont expect for changes to be made.\nCut off procedure will need finalising to ensure it meets current technique.\n"
+      "CutOffProcedure": "Complete",
+      "comments": "Wax assembly procedure complete and dont expect future changes to be needed.\nfoundry procedure technique is complete and dont expect for changes to be made.\nCut off procedure will need finalising to ensure it meets current technique.\n14.01.23\n"
     }
   ]
 }

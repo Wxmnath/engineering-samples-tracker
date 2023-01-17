@@ -9,6 +9,11 @@ function ProjectDetails() {
   const [waxProcedure, setWaxProcedure] = useState("");
   const [foundryProcedure, setFoundryProcedure] = useState("");
   const [cutOffProcedure, setCutOffProcedure] = useState("");
+  const [linishProcedure, setLinishProcedure] = useState("");
+  const [ipcProcedure, setIpcProcedure] = useState("");
+  const [fettlingProcedure, setFettlingProcedure] = useState("");
+  const [visualProcedure, setVisualProcedure] = useState("");
+  const [partmarkProcedure, setPartmarkProcedure] = useState("");
   const [commentsAdded, setCommentsAdded] = useState("");
   const [stage, setStage] = useState("");
   // eslint-disable-next-line no-unused-vars
@@ -44,6 +49,11 @@ function ProjectDetails() {
       WaxProcedure: waxProcedure,
       FoundryProcedure: foundryProcedure,
       CutOffProcedure: cutOffProcedure,
+      LinishProcedure: linishProcedure,
+      IpcProcedure: ipcProcedure,
+      FettlingProcedure: fettlingProcedure,
+      VisualProcedure: visualProcedure,
+      PartmarkProcedure: partmarkProcedure,
       comments: commentsAdded,
       Stage: stage,
     });
@@ -62,7 +72,7 @@ function ProjectDetails() {
           <h2>{project.Tool}</h2>
           <h3>Project Status: {project.Stage}</h3>
           <select
-            defaultValue={stage}
+            defaultValue={(stage, project.Stage)}
             onChange={(e) => setStage(e.target.value)}
           >
             <option value="Contract Review">Contract Review</option>
@@ -110,25 +120,138 @@ function ProjectDetails() {
                   onChange={(e) => setFoundryProcedure(e.currentTarget.value)}
                 />
                 Complete
-              </div>
-              <div>
-                <h3>Cut Off Procedure: {project.CutOffProcedure}</h3>
-                <input
-                  type="radio"
-                  name="cutoffprocedure"
-                  value="Not Complete"
-                  required
-                  onChange={(e) => setCutOffProcedure(e.currentTarget.value)}
-                />
-                Not Complete
-                <input
-                  type="radio"
-                  name="cutoffprocedure"
-                  value="Complete"
-                  required
-                  onChange={(e) => setCutOffProcedure(e.currentTarget.value)}
-                />
-                Complete
+                <div>
+                  <h3>Cut Off Procedure: {project.CutOffProcedure}</h3>
+                  <input
+                    type="radio"
+                    name="cutoffprocedure"
+                    value="Not Complete"
+                    required
+                    onChange={(e) => setCutOffProcedure(e.currentTarget.value)}
+                  />
+                  Not Complete
+                  <input
+                    type="radio"
+                    name="cutoffprocedure"
+                    value="Complete"
+                    required
+                    onChange={(e) => setCutOffProcedure(e.currentTarget.value)}
+                  />
+                  Complete
+                  <div>
+                    <h3>Linish Procedure: {project.LinishProcedure}</h3>
+                    <input
+                      type="radio"
+                      name="linishprocedure"
+                      value="Not Complete"
+                      required
+                      onChange={(e) =>
+                        setLinishProcedure(e.currentTarget.value)
+                      }
+                    />
+                    Not Complete
+                    <input
+                      type="radio"
+                      name="linishprocedure"
+                      value="Complete"
+                      required
+                      onChange={(e) =>
+                        setLinishProcedure(e.currentTarget.value)
+                      }
+                    />
+                    Complete
+                    <div>
+                      <h3>IPC/STR Procedure: {project.IpcProcedure}</h3>
+                      <input
+                        type="radio"
+                        name="IPCprocedure"
+                        value="Not Complete"
+                        required
+                        onChange={(e) => setIpcProcedure(e.currentTarget.value)}
+                      />
+                      Not Complete
+                      <input
+                        type="radio"
+                        name="IPCprocedure"
+                        value="Complete"
+                        required
+                        onChange={(e) => setIpcProcedure(e.currentTarget.value)}
+                      />
+                      Complete
+                      <div>
+                        <h3>Fettling Procedure: {project.FettlingProcedure}</h3>
+                        <input
+                          type="radio"
+                          name="fettlingprocedure"
+                          value="Not Complete"
+                          required
+                          onChange={(e) =>
+                            setFettlingProcedure(e.currentTarget.value)
+                          }
+                        />
+                        Not Complete
+                        <input
+                          type="radio"
+                          name="fettlingprocedure"
+                          value="Complete"
+                          required
+                          onChange={(e) =>
+                            setFettlingProcedure(e.currentTarget.value)
+                          }
+                        />
+                        Complete
+                        <div>
+                          <h3>Visual Procedure: {project.VisualProcedure}</h3>
+                          <input
+                            type="radio"
+                            name="visualprocedure"
+                            value="Not Complete"
+                            required
+                            onChange={(e) =>
+                              setVisualProcedure(e.currentTarget.value)
+                            }
+                          />
+                          Not Complete
+                          <input
+                            type="radio"
+                            name="visualprocedure"
+                            value="Complete"
+                            required
+                            onChange={(e) =>
+                              setVisualProcedure(e.currentTarget.value)
+                            }
+                          />
+                          Complete
+                          <div>
+                            <h3>
+                              Part Mark Procedure: {project.PartmarkProcedure}
+                            </h3>
+                            <input
+                              type="radio"
+                              name="partmarkprocedure"
+                              value="Not Complete"
+                              required
+                              onChange={(e) =>
+                                setPartmarkProcedure(e.currentTarget.value)
+                              }
+                            />
+                            Not Complete
+                            <input
+                              type="radio"
+                              name="partmarkprocedure"
+                              value="Complete"
+                              required
+                              onChange={(e) =>
+                                setPartmarkProcedure(e.currentTarget.value)
+                              }
+                            />
+                            Complete
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <h3>Last Comments:</h3>
               <textarea
@@ -136,7 +259,6 @@ function ProjectDetails() {
                 type="text"
                 name="comments"
                 defaultValue={(commentsAdded, project.comments)}
-                // test 3
                 onChange={handleChange}
               />
               <button type="submit" onClick={handleUpdate}>

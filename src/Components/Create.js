@@ -8,9 +8,7 @@ function Create() {
   const [Stage, setStage] = useState("Contract Review");
   const [Engineer, setEngineer] = useState("");
   const [Customer, setCustomer] = useState("");
-  const [WaxProcedure, setWaxProcedure] = useState("");
-  const [FoundryProcedure, setFoundryProcedure] = useState("");
-
+  const [Date, setDate] = useState("");
   const [Description, setDescription] = useState("");
   const [isPending, setIsPending] = useState(false);
   const history = useNavigate();
@@ -24,7 +22,7 @@ function Create() {
       Tool,
       Stage,
       Engineer,
-      WaxProcedure,
+      Date,
     };
 
     setIsPending(true);
@@ -96,22 +94,14 @@ function Create() {
           onChange={(e) => setEngineer(e.target.value)}
         />
 
-        <label>Wax Procedure: </label>
-        <select
-          value={WaxProcedure}
-          onChange={(e) => setWaxProcedure(e.target.value)}
-        >
-          <option value="Not Complete">Not Complete</option>
-          <option value="Complete">Complete</option>
-        </select>
-        <label>Foundry Procedure: </label>
-        <select
-          value={FoundryProcedure}
-          onChange={(e) => setFoundryProcedure(e.target.value)}
-        >
-          <option value="Not Complete">Not Complete</option>
-          <option value="Complete">Complete</option>
-        </select>
+        <label>Due Date: </label>
+        <input
+          type="date"
+          name="date"
+          required
+          value={Date}
+          onChange={(e) => setDate(e.target.value)}
+        />
 
         {!isPending && <button type="submit">Add Job</button>}
         {isPending && (

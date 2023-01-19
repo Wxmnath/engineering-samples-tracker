@@ -16,6 +16,7 @@ function ProjectDetails() {
   const [partmarkProcedure, setPartmarkProcedure] = useState("");
   const [commentsAdded, setCommentsAdded] = useState("");
   const [stage, setStage] = useState("");
+  const [date, setDate] = useState("");
   // eslint-disable-next-line no-unused-vars
   let savedText = "";
 
@@ -56,6 +57,7 @@ function ProjectDetails() {
       PartmarkProcedure: partmarkProcedure,
       comments: commentsAdded,
       Stage: stage,
+      Date: date,
     });
   };
 
@@ -260,6 +262,12 @@ function ProjectDetails() {
                 name="comments"
                 defaultValue={(commentsAdded, project.comments)}
                 onChange={handleChange}
+              />
+              <h3>Due date: {project.Date}</h3>
+              <input
+                type="date"
+                value={(date, project.Data)}
+                onChange={(e) => setDate(e.target.value)}
               />
               <button type="submit" onClick={handleUpdate}>
                 Update
